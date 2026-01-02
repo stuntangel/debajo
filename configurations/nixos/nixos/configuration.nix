@@ -8,6 +8,8 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
+
+  time.timeZone = "America/Los_Angeles";
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   services.blueman.enable = true;
@@ -51,18 +53,20 @@
     options v4l2loopback devices=1 video_nr=10 card_label="Virtual Cam" exclusive_caps=1
   '';
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/aab8fb66-4be0-4e7d-9a5a-ff6b10fd5090";
+    fileSystems."/" =
+    { device = "/dev/disk/by-uuid/c41975b7-877f-47fe-ad34-b6516fb1dfff";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C955-E37F";
+    { device = "/dev/disk/by-uuid/9107-6145";
       fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
+      options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  swapDevices = [ { device = "/dev/disk/by-uuid/c21488db-1d03-40fd-8ca9-3efa85d70a43";  } ];
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/6ec4f9ce-6726-4cc5-94da-32272579d271"; }
+    ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

@@ -1,6 +1,12 @@
 {
   description = "A home-manager template providing useful tools & settings for Nix-based development";
 
+  nixConfig.extra-substituters = "https://niri.cachix.org";
+  nixConfig.extra-trusted-public-keys = ''
+    niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964=
+  '';
+
+
   inputs = {
     # Principle inputs (updated by `nix run .#update`)
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -10,7 +16,6 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixos-unified.url = "github:srid/nixos-unified";
-
     # Software inputs
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
