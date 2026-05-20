@@ -15,7 +15,7 @@
       # Mod-Shift-/, which is usually the same as Mod-?,
       # shows a list of important hotkeys.
       "Mod+Shift+Slash".action.show-hotkey-overlay = {};
-
+      "Mod+Shift+V".action.toggle-window-floating = {};
       # Suggested binds for running programs: terminal, app launcher, screen locker.
       "Mod+Return".action.spawn = "ghostty";
       "Mod+P".action = lib.mkForce {

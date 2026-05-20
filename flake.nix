@@ -28,7 +28,12 @@
     agenix.url = "github:ryantm/agenix";
     tinted-theming.url = "github:tinted-theming/schemes";
     tinted-theming.flake = false;
-    kooky.url = "github:stuntangel/kooky";
+    emacs-overlay.url = "github:nix-community/emacs-overlay/da2f552d133497abd434006e0cae996c0a282394";
+    kooky.url = "path:/home/ryan/Documents/emacs";
+    winapps = {
+      url = "github:winapps-org/winapps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # Wired using https://nixos-unified.org/guide/autowiring

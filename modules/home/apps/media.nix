@@ -9,7 +9,8 @@
   home.packages =
     [
       pkgs.steam
-      pkgs.stremio
+      pkgs.prismlauncher
+      pkgs.stremio-linux-shell
       pkgs.pavucontrol
       pkgs.mpv
       pkgs.geeqie

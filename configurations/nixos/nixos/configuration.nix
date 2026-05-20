@@ -14,7 +14,7 @@
   networking.networkmanager.enable = true;
   services.blueman.enable = true;
   powerManagement.cpuFreqGovernor = "performance"; # Default governor, overridden by power-profiles-daemon
-  users.users.ryan.extraGroups = [ "wheel" "networkmanager" ];
+  users.users.ryan.extraGroups = [ "wheel" "networkmanager" "dialout"];
   hardware.bluetooth.powerOnBoot = true;
   hardware.enableRedistributableFirmware = true;
 
@@ -29,6 +29,8 @@
       rocmPackages.clr.icd  # OpenCL support for AMD
     ];
   };
+
+  hardware.bluetooth.enable = true;
 
   boot.loader.grub = {
     enable = true;
